@@ -1,0 +1,48 @@
+module testConstantPropagation {
+    b=10;
+	c= [95];
+	c= 95;
+    function y=f(a) {
+
+		c = [70];
+		b=5;
+		w = [50];
+		w[2] = b;
+		c[2]=6;
+		a=5;
+        while(a < b)
+        {
+            a = b + 1;
+			b = a + 3;
+        }
+		b=20;
+		a=5;
+        if (a <= b)
+        {
+         a = 20;
+		 c[2]=6;
+        }
+		else
+		{
+			a=5;
+			 c[2]=6;
+		}
+		y = a;
+        io.println(y);
+		
+        y = c[2];
+		y=w[2];
+		y=b;
+		b= w[2] + 1;
+		c[2]= b + y;
+		
+		y=c[2];
+        io.println(y);
+    }
+   
+    
+    function main()
+    {
+        f(0);
+    }
+}

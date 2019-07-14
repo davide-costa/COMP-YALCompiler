@@ -1,0 +1,32 @@
+REM some require user input. If it freezes, then it is because it is waiting for input
+REM also, you may need to have io.class on the cwd
+java all
+java array1
+java array2
+java arraytest
+java aval1
+java aval3
+java aval5
+java aval6
+java aval7
+java aval8
+java callMain
+java constantRanges
+java inputAsOutput
+java library1
+java m1
+java max
+java max1
+java maxmin
+java max_array
+java miniArithTest
+java nestedBranch
+java programa1
+java programa2
+java programa3
+java registerTest
+java sqrt
+java stackSize
+java testGlobals
+java testLocalArrays
+java testModule1

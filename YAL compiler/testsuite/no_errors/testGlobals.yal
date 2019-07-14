@@ -1,0 +1,26 @@
+module testGlobals
+{
+	a = 1;
+	b = 1000;
+	c;
+	
+	function x = foo(y)
+	{
+		x = 1234;
+	}
+	
+	function main()
+	{
+		x1 = 12;
+		x2 = 44;
+		
+		a = foo(b);
+		//b = x1 + x2;
+		c = 3;
+		c = 4;
+		
+		io.println("a = ", a);
+		io.println("b = ", b);
+		io.println("c = ", c);
+	}
+}

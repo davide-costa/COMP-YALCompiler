@@ -1,0 +1,16 @@
+module testLocalArrays
+{
+	a = 1;
+	
+	function x = f1()
+	{
+		io.println("a = ", a);
+		x = 100;
+	}
+	
+	function main()
+	{
+		a = 2;
+		f1();
+	}
+}

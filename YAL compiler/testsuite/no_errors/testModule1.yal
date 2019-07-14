@@ -1,0 +1,21 @@
+module testModule1 
+{
+	a = 2;
+	b = 3;
+	c = 4;
+	
+	function d = method1(x1, x2)
+	{
+		d = 2 + c;
+		d = d + x1;
+		d = d + x2; 
+	}
+	
+	function main()
+	{
+		x = method1(a, b);
+		c = method1(b, x);
+		io.println("x = ", x);	//x = 11
+		io.println("c = ", c);	//c = 20
+	}
+}

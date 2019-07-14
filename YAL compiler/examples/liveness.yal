@@ -1,0 +1,80 @@
+module liveness
+{
+	g1 = 2;
+	g2 = 3;
+	g3 = 4;
+	
+	function ret = f1(a, b)
+	{
+		c = 2;			//def: c
+		c = a;			//def: c	use: a
+		c = c + a;		//def: c	use: a, c
+		c = c + b;		//def: c	use: b, c
+		d = c;			//def: d	use: c
+		g1 = g2;
+		d = g3;			//def: d
+		d = g1 + g2;	//def: d
+		f2(d);			//use: d
+		a = f3(b, c);	//def: a	use: b, c
+		ret = d;		//def: ret	use: d
+	}
+	
+	function f2(arg1)
+	{
+		arg1 = 1 + g3;
+	}
+	
+	function ret = f3(arg1, arg2)
+	{
+		ret = 0;
+		if (arg1 > arg2)
+		{
+			ret = arg1;
+		}
+		else
+		{
+			ret = arg2;
+		}
+		a = 0;
+		while (ret < 10)
+		{
+			ret = ret + 1;
+		}
+	}
+	
+	function ret = f4(arg1, arg2)
+	{
+		a = arg1;
+		b = a;
+		while (arg2 > 10)
+		{
+			arg2 = a + 1;
+		}
+		ret = arg2 + arg1;
+	}
+	
+	function ret = f5(arg1, arg2)
+	{
+		a = arg2;
+		x = 123;
+		if (arg1 > arg2)
+		{
+			b = arg1;
+			arg1 = b + arg2; 
+		}
+		else
+		{
+			c = arg2;
+			arg2 = c + arg1;
+		}
+		ret = a;
+	}
+	
+	function main()
+	{
+		a = f1(1, 2);	//a = 4;
+		b = f3(a, 3);	//b = 10;
+		io.println("a = ", a);
+		io.println("b = ", b);
+	}
+}

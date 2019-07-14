@@ -1,0 +1,18 @@
+module template
+{
+	function f(x)
+	{
+		while (x < 10)
+		{
+			x = x + 1;
+			io.println("x = ", x);
+		}
+		io.println("x is now ", x);
+	}
+	
+	function main()
+	{
+		f(1);
+		f(2);
+	}
+}

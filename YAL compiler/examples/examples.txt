@@ -1,0 +1,21 @@
+In these examples we show:
+
+- liveness.yal: used to test the liveness analysis (check the compiler output to see all the sets)
+
+	Run with: java -jar yal2jvm.jar -S -v liveness.yal
+
+- testConstantFolding.yal: used to demonstrate the constant folding optimization (check the generated .j file)
+
+	Run with: java -jar yal2jvm.jar -o -S testConstantFolding.yal
+
+- testConstantPropagation.yal: used to demonstrate the constant propagation optimization (check the generated .j file)
+
+	Run with: java -jar yal2jvm.jar -o -S testConstantPropagation.yal
+
+- template.yal: used to demonstrate the efficient template for While (check the generated .j file)
+
+	Run with: java -jar yal2jvm.jar -o -S template.yal
+
+- registerTest.yal: used to demonstrate register allocation. It compiles using a single register (check the compiler output and/or the .j file)
+
+	Run with: java -jar yal2jvm.jar -S -r=1 -v registerTest.yal

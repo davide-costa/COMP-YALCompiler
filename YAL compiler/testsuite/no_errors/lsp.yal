@@ -1,0 +1,31 @@
+module m1 {
+
+    function f1(N) {
+    }
+
+    function a=f2(N) {
+        a = 5;
+    }
+
+    function b[]=f3(N) {
+        b = [7];
+        b[0] = 3;
+    }
+
+    function main() {
+        N = 3;
+
+        a = f2(N);
+        b = f3(N);
+
+        a = m1.f2(N);
+        b = m1.f3(N);
+
+        a = m1.f2(N);
+        b = m1.f3(N);
+
+        f1(N);
+
+        f2(N);
+    }
+}
